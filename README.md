@@ -12,16 +12,20 @@ This extension will display a source file at the line number associated with a s
 ## Installation
 
 ### Mac & Linux
+```
 cd $HOME/.vscode/extensions
 git clone https://github.com/AndrewBanks10/cr-state-file-open
 cd cr-state-file-open
 npm install
+```
 
 ### Windows
+```
 cd %USERPROFILE%\.vscode\extensions
 git clone https://github.com/AndrewBanks10/cr-state-file-open
 cd cr-state-file-open
 npm install
+```
 
 ## Usage
 Using the StateMonitor, select a particular state for details. Then open the command palette in vscode and find the command "react-causality-redux load file". Select it. This will open the source file that caused the state change at the particular line number. 
