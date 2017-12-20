@@ -1,11 +1,5 @@
 # cr-state-file-open
-
-Basded on displaying the causality-redix monitor
-This vscode extension opens source files at their associated line numbers where state changes occur.
-
-## Features
-
-
+This extension will display a source file at the line number associated with a specified redux state change when used in conjunction with [StateMonitor](https://github.com/AndrewBanks10/StateMonitor).
 
 ## Requirements
 
@@ -15,14 +9,26 @@ This vscode extension opens source files at their associated line numbers where 
 4. [create-react-project](https://github.com/AndrewBanks10/create-react-project)
 5. [StateMonitor](https://github.com/AndrewBanks10/StateMonitor)
 
-vscode, causality-redux, create-react-project
+## Installation
+
+### Mac & Linux
+cd $HOME/.vscode/extensions
+git clone https://github.com/AndrewBanks10/cr-state-file-open
+cd cr-state-file-open
+npm install
+
+### Windows
+cd %USERPROFILE%\.vscode\extensions
+git clone https://github.com/AndrewBanks10/cr-state-file-open
+cd cr-state-file-open
+npm install
+
+## Usage
+Using the StateMonitor, select a particular state for details. Then open the command palette in vscode and find the command "react-causality-redux load file". Select it. This will open the source file that caused the state change at the particular line number. 
 
 ## Known Issues
-
 None
 
 ### License
-
 MIT
 
-"# cr-state-file-open" 
