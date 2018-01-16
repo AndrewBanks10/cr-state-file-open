@@ -21,6 +21,10 @@ function getFullPath(relativeFileName) {
 }
 
 function openDocument(line, file) {
+    if (file === 'Unknown') {
+        vscode.window.showErrorMessage('The source module for this state change was invalidated by HMR. The source cannot be displayed.');
+        return
+    }
     const filePath = getFullPath(file)
     if ( typeof filePath !== 'string' ) {
         vscode.window.showInformationMessage(filePath.message)
@@ -37,7 +41,6 @@ function openDocument(line, file) {
 }
 
 function activate(context) {
-    let myOutputChannel = null
     let disposable = vscode.commands.registerCommand('extension.CR-Load-File', function () {
         let line, file, stack
         try {
