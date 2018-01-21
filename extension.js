@@ -46,7 +46,7 @@ function activate(context) {
         try {
             ({stack, file, line} = JSON.parse(copyPaste.paste()))
         } catch (ex) {
-            vscode.window.showInformationMessage(`Invalid clipboard object. ${ex}`)
+            vscode.window.showErrorMessage(`Invalid clipboard object. ${ex}`)
             return
         }
 
@@ -68,6 +68,9 @@ function activate(context) {
                 const matches = item.match(/([^(]*)\(([^:]+):([0-9]+)/)
                 if ( matches )
                     openDocument(matches[3], matches[2])
+                else {
+                    vscode.window.showErrorMessage(`Invalid sourcemap at this location.`)
+                }
             })
     })
 
